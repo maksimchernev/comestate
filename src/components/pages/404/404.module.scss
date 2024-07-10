@@ -1,0 +1,25 @@
+@import "/src/styles/typography.scss";
+@import "/src/styles/layout.scss";
+
+.section {
+    @include mainLayout;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .hidden {
+        display: none;
+    }
+    .num {
+        @include h1;
+        color: $primary;
+    }
+    .title {
+        @include h4;
+        margin-top: 24px;
+    }
+    .link {
+        margin-top: 24px;
+    }
+}

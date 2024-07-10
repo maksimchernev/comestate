@@ -1,0 +1,17 @@
+@mixin mainLayout {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    @media (max-width: "1280px") {
+        padding: 0 32px;
+    }
+    @media (max-width: "992px") {
+        padding: 0 24px;
+    }
+    @media (max-width: "768px") {
+        padding: 0 16px;
+    }
+}

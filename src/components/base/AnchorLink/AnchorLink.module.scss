@@ -1,0 +1,13 @@
+@import "/src/styles/colors.scss";
+@import "/src/styles/typography.scss";
+
+.link {
+    @include p14Regular;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+}

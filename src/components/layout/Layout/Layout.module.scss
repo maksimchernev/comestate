@@ -1,0 +1,16 @@
+@import "/src/styles/layout.scss";
+@import "/src/styles/variables.scss";
+
+.main {
+    min-height: calc(100vh - $footer-height);
+    @media (width < 769px) {
+        min-height: calc(100vh - $footer-height-mobile);
+    }
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 120px;
+
+    @media (width < 769px) {
+        row-gap: 48px;
+    }
+}

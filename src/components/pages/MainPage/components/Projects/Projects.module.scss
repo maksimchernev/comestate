@@ -1,0 +1,61 @@
+@import "/src/styles/colors.scss";
+@import "/src/styles/typography.scss";
+@import "/src/styles/layout.scss";
+
+.projects {
+    @include mainLayout;
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 48px;
+    @media (width < 769px) {
+        row-gap: 24px;
+    }
+    .title {
+        @include h2;
+        text-align: center;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 64px;
+
+        @media (width < 769px) {
+            grid-template-columns: 100%;
+            row-gap: 20px;
+        }
+        .projectWrapper {
+            display: flex;
+            flex-direction: column;
+
+            .image {
+                width: 100%;
+                height: auto;
+            }
+            .projectName {
+                @include p24Medium;
+                color: $secondary;
+                margin-top: 40px;
+                @media (width < 769px) {
+                    @include p20Medium;
+                    color: $secondary;
+                    margin-top: 20px;
+                }
+            }
+            .projectText {
+                @include p24Regular;
+                margin-top: 16px;
+                @media (width < 769px) {
+                    @include p18Regular;
+                    margin-top: 8px;
+                }
+                @include serverList;
+                ul {
+                    @include p18Regular;
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    }
+}

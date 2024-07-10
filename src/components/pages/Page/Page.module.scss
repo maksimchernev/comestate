@@ -1,0 +1,28 @@
+@import "/src/styles/typography.scss";
+@import "/src/styles/colors.scss";
+@import "/src/styles/layout.scss";
+
+.section {
+    @include mainLayout;
+
+    .title {
+        @include h2;
+        margin-top: 24px;
+        @media (width < 769px) {
+            color: $primary;
+        }
+    }
+
+    .content {
+        @include serverParagraph;
+        p {
+            @include p18Regular;
+            margin-top: 12px;
+        }
+        @include serverList;
+        ul {
+            @include p18Regular;
+            margin-top: 12px;
+        }
+    }
+}

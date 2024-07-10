@@ -1,0 +1,74 @@
+@import "/src/styles/colors.scss";
+@import "/src/styles/typography.scss";
+@import "/src/styles/variables.scss";
+@import "/src/styles/polyfills.scss";
+@import "/src/styles/layout.scss";
+
+.hero {
+    position: relative;
+    @media (width > 768px) {
+        @include aspect(1280, 700);
+    }
+    @media (width < 769px) {
+        min-height: 50vh;
+    }
+    .bgImage {
+        object-fit: cover;
+        z-index: -1;
+    }
+    .wrapper {
+        @include mainLayout;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 800px;
+        @media (width < 1281px) {
+            max-width: 600px;
+        }
+        @media (width < 769px) {
+            max-width: 500px;
+        }
+        @media (width < 480px) {
+            max-width: 300px;
+        }
+        .title {
+            @include h1;
+            text-transform: uppercase;
+            @include visuallyHidden;
+        }
+        .grad,
+        .green {
+            @include h1;
+            text-transform: uppercase;
+        }
+        .grad {
+            background-image: $text-grad;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+
+            &:last-child {
+                align-self: center;
+            }
+        }
+        .green {
+            color: $secondary;
+            align-self: flex-end;
+        }
+    }
+    .arrowLink {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .arrowLinkImg {
+            @media (width < 992px) {
+                width: 24px;
+                height: auto;
+            }
+        }
+    }
+}

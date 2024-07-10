@@ -1,0 +1,51 @@
+@import "/src/styles/layout.scss";
+@import "/src/styles/variables.scss";
+@import "/src/styles/colors.scss";
+@import "/src/styles/polyfills.scss";
+@import "/src/styles/typography.scss";
+
+.footer {
+    background: $primary;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+    &.withImage {
+        @include aspect(1280, 369);
+    }
+    @media (width < 769px) {
+        margin-top: 48px;
+    }
+    .bgImage {
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .content {
+        @include mainLayout;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 48px 0;
+        z-index: 1;
+
+        .link {
+            @include h3;
+            @include medium;
+            color: white;
+
+            &:last-of-type {
+                margin-bottom: 90px;
+                @media (width < 769px) {
+                    margin-bottom: 24px;
+                }
+            }
+        }
+        .copy {
+            @include p20Regular;
+            color: white;
+        }
+    }
+}

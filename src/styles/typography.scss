@@ -1,0 +1,266 @@
+@import "/src/styles/colors.scss";
+
+@mixin styleFont {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    white-space: pre-wrap;
+}
+
+///////////////////////////////////////////
+
+@mixin regular {
+    @include styleFont;
+    font-weight: 400;
+}
+
+@mixin medium {
+    @include styleFont;
+    font-weight: 500;
+}
+
+@mixin bold {
+    @include styleFont;
+    font-weight: 700;
+}
+
+/////////////////////////////////////////////
+@mixin font32 {
+    font-size: 32px;
+    line-height: 40px;
+}
+@mixin font24 {
+    font-size: 24px;
+    line-height: 26px;
+}
+@mixin font22 {
+    font-size: 22px;
+    line-height: 30px;
+}
+@mixin font20 {
+    font-size: 20px;
+    line-height: 22px;
+}
+@mixin font18 {
+    font-size: 18px;
+    line-height: 24px;
+}
+@mixin font16 {
+    font-size: 16px;
+    line-height: 26px;
+}
+@mixin font14 {
+    font-size: 14px;
+    line-height: 20px;
+}
+@mixin font12 {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+/////////////////////////////////////////////
+
+@mixin h1 {
+    @include bold;
+    font-size: 80px;
+    line-height: 100px;
+    color: white;
+    word-break: break-all;
+    @media (max-width: "1280px") {
+        font-size: 60px;
+        line-height: 72px;
+    }
+    @media (max-width: "991px") {
+        font-size: 52px;
+        line-height: 60px;
+    }
+    @media (max-width: "768px") {
+        font-size: 48px;
+        line-height: 56px;
+    }
+    @media (max-width: "480px") {
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+
+@mixin h2 {
+    @include medium;
+    font-size: 48px;
+    line-height: 48px;
+    color: $primary;
+    text-transform: uppercase;
+    word-break: break-word;
+    @media (max-width: "1280px") {
+        font-size: 40px;
+        line-height: 48px;
+    }
+    @media (max-width: "768px") {
+        font-size: 28px;
+        line-height: 40px;
+    }
+}
+
+@mixin h3 {
+    @include regular;
+    font-size: 40px;
+    line-height: 56px;
+    color: $text-main;
+    word-break: break-word;
+    @media (max-width: "1280px") {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    @media (max-width: "768px") {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+@mixin h4 {
+    @include regular;
+    font-size: 24px;
+    line-height: 26px;
+    word-break: break-word;
+    @media (max-width: "1280px") {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    @media (max-width: "768px") {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+//  --Paragraphs--
+
+@mixin p32Regular {
+    @include regular;
+    @include font32;
+}
+
+@mixin p32Medium {
+    @include medium;
+    @include font32;
+}
+@mixin p24Regular {
+    @include regular;
+    @include font24;
+}
+
+@mixin p24Medium {
+    @include medium;
+    @include font24;
+}
+
+@mixin p22Regular {
+    @include regular;
+    @include font22;
+}
+
+@mixin p22Medium {
+    @include medium;
+    @include font22;
+}
+
+@mixin p20Regular {
+    @include regular;
+    @include font20;
+}
+
+@mixin p20Medium {
+    @include medium;
+    @include font20;
+}
+
+@mixin p18Regular {
+    @include regular;
+    @include font18;
+}
+
+@mixin p18Medium {
+    @include medium;
+    @include font18;
+}
+
+@mixin p16Regular {
+    @include regular;
+    @include font16;
+}
+
+@mixin p16Medium {
+    @include medium;
+    @include font16;
+}
+
+@mixin p14Regular {
+    @include regular;
+    @include font14;
+}
+
+@mixin p14Medium {
+    @include medium;
+    @include font14;
+}
+
+@mixin p12Regular {
+    @include regular;
+    @include font12;
+}
+
+@mixin p12Medium {
+    @include medium;
+    @include font12;
+}
+
+/////////////////////////////////////////////
+
+@mixin visuallyHidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+@mixin serverParagraph {
+    p {
+        &:not(:last-child) {
+            margin-bottom: 4px;
+        }
+    }
+}
+
+@mixin serverList {
+    ul {
+        &:not(:last-child) {
+            margin-bottom: 4px;
+        }
+        li {
+            @include p18Regular;
+            position: relative;
+            margin-left: 16px;
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+        }
+        li:before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 10px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: $primary;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@import "/src/styles/typography.scss";
+@import "/src/styles/colors.scss";
+
+.button {
+    @include p16Medium;
+    padding: 8px 20px;
+    background: $primary;
+    text-transform: uppercase;
+    border: none;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $hover;
+    }
+}

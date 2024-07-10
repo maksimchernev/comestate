@@ -1,0 +1,69 @@
+@import "/src/styles/layout.scss";
+@import "/src/styles/variables.scss";
+@import "/src/styles/typography.scss";
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    position: sticky;
+    width: max-content;
+    margin: 0 auto;
+    top: 40px;
+    z-index: var(--header-z-index);
+    background-color: #3300ce80;
+    height: $header-height;
+    height: 50px;
+    border-radius: 50px;
+    &.isMainPage {
+        margin-bottom: -50px;
+    }
+    @media (width < 769px) {
+        width: 100%;
+        top: 20px;
+        padding: 0 8px;
+        border-radius: 0;
+    }
+    nav {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .menuItem {
+        @include p18Regular;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        @media (width < 992px) {
+            @include p16Regular;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        @media (width < 480px) {
+            @include p14Regular;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .bold {
+            @include bold;
+        }
+    }
+    .menuItem:not(:last-child) {
+        margin-right: 32px;
+
+        @media (width < 992px) {
+            margin-right: 20px;
+        }
+
+        @media (width < 769px) {
+            margin-right: 12px;
+        }
+        @media (width < 480px) {
+            margin-right: 8px;
+        }
+    }
+}

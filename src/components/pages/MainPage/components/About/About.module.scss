@@ -1,0 +1,34 @@
+@import "/src/styles/colors.scss";
+@import "/src/styles/typography.scss";
+@import "/src/styles/layout.scss";
+
+.about {
+    @include mainLayout;
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 48px;
+    @media (width < 769px) {
+        row-gap: 24px;
+    }
+    .title {
+        @include h2;
+        text-align: center;
+    }
+    .text {
+        @include serverParagraph;
+        @include p32Regular;
+        p {
+            text-align: center;
+        }
+        @media (width < 769px) {
+            @include p22Regular;
+        }
+        @include serverList;
+        ul li {
+            @include p32Regular;
+            @media (width < 769px) {
+                @include p22Regular;
+            }
+        }
+    }
+}
